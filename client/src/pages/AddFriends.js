@@ -58,7 +58,7 @@ function AddFriends() {
         age: Yup.number().positive("Age must be a positive number").required("Please enter age"),
         position: Yup.string().required("Please enter position"),
     })
-    
+
     return (
         <div className='AddFriendsPage'>
             <Button variant="contained" align="left" startIcon={<MdPersonAdd />} onClick={handleOpen}>
@@ -75,28 +75,28 @@ function AddFriends() {
                     {/* <Typography id="modal-modal-title" variant="h6" component="h2">
                         Add Friends
                     </Typography> */}
-                    <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                        <Box sx={{ width: '100%' }}>
-                            <Collapse in={openAlert}>
-                                <Alert
-                                    action={
-                                        <IconButton
-                                            aria-label="close"
-                                            color="inherit"
-                                            size="small"
-                                            onClick={() => {
-                                                setOpenAlert(false);
-                                            }}
-                                        >
-                                            <AiOutlineClose fontSize="inherit" />
-                                        </IconButton>
-                                    }
-                                    sx={{ mb: 2 }}
-                                >
-                                    This is a success alert — check it out!
-                                </Alert>
-                            </Collapse>
-                        </Box>
+                    <Box sx={{ width: '100%' }}>
+                        <Collapse in={openAlert}>
+                        <Alert
+                                action={
+                                    <IconButton
+                                        aria-label="close"
+                                        color="inherit"
+                                        size="small"
+                                        onClick={() => {
+                                            setOpenAlert(false);
+                                        }}
+                                    >
+                                        <AiOutlineClose fontSize="inherit" />
+                                    </IconButton>
+                                }
+                                sx={{ mb: 2 }}
+                            >
+                                This is a success alert — check it out!
+                            </Alert>
+                        </Collapse>
+                    </Box>
+                    <Typography id="modal-modal-description" component={'span'} sx={{ mt: 2 }}>
                         <Formik
                             initialValues={initialValues}
                             onSubmit={(value, formikHelpers) => {
@@ -135,7 +135,7 @@ function AddFriends() {
                                     </FormControl>
                                     <FormControl sx={{ m: 1, minWidth: 120 }}>
                                         <Field
-                                            id="inputAddFriends"
+                                            id="inputAddFriends" 
                                             name="phone_number"
                                             as={TextField}
                                             type="tel"
