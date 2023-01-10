@@ -1,23 +1,9 @@
 {
   "development": {
     "username": "root",
-    "password": "P@ssw0rd",
+    "password": "mQ9skrdIb2",
     "database": "phonebookdb",
-    "host": "localhost",
-    "dialect": "mysql"
-  },
-  "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  },
-  "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
+    "host": "202.151.176.94",
     "dialect": "mysql"
   }
 }
