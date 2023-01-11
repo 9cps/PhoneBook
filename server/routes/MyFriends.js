@@ -2,6 +2,8 @@
 const express = require('express');
 const router = express.Router();
 const { MyFriends } = require('../models');
+//const connection = require('../config/connecter');
+const friendsRepo = require('../repository/friendsRepo');
 
 router.get('/', async (req, res) => {
     const listFriends = await MyFriends.findAll();
@@ -12,6 +14,19 @@ router.get('/GetOne/:id', async (req, res) => {
     const id = req.params.id;
     const friend = await MyFriends.findByPk(id);
     res.json(friend);
+});
+
+router.get('/GetByName/:keyword', async (req, res) => {
+    const keyword = req.params.keyword;
+    friendsRepo.GET_FREIENDS_BY_NAME(keyword)
+    .then((obj) => {
+        console.log(obj);
+        res.json(obj);
+    })
+    .catch((err) => {
+        console.log(err);
+        res.status(500).send({error: err.message});
+    });
 });
 
 router.put('/Delete', async (req, res) => {
