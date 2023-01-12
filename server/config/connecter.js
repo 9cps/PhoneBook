@@ -1,5 +1,5 @@
 const mysql = require('mysql2');
-var CONFIG = require('../config/config.json');
+var CONFIG = require('./config.json');
 
 exports.CONNECTION_SQL = mysql.createConnection({
     host: CONFIG.development.host,
